@@ -31,7 +31,8 @@ console.log(browserType.replace('moz', 'vam')); //vamilla
 
 
 /* --------------------------------------------------------------------------------
-    演習1
+    # 演習1
+    `Christmas`が入っている文字列のみ抽出する
 ---------------------------------------------------------------------------------- */
 
 // 変数 list にドキュメント内の最初の .output クラスが付与されている要素の子要素 ul を格納する
@@ -65,23 +66,26 @@ for (var i = 0; i < greetings.length; i++) {
 }
 
 /* --------------------------------------------------------------------------------
-    演習2
+    # 演習2
+    文字列の大文字・小文字を正規化する
 ---------------------------------------------------------------------------------- */
+
 var list = document.querySelector('.output2 ul');
 list.innerHTML = '';
 var cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
 
 for(var i = 0; i < cities.length; i++) {
-  var input = cities[i];
 
-  var lower = input.toLowerCase();
-  var upper = lower[0].toUpperCase();
-  
-  var name = lower.replace(lower[0], upper);
+    var input = cities[i];
+    // 文字列を全て小文字にする
+    var lower = input.toLowerCase();
+    // 文字列の最初の文字だけ大文字にする
+    var upper = lower[0].toUpperCase();
+    // 変数 name 正規化した文字列をに格納する
+    var name = lower.replace(lower[0], upper);
 
-
-  var result = name;
-  var listItem = document.createElement('li');
-  listItem.textContent = result;
-  list.appendChild(listItem);
+    var result = name;
+    var listItem = document.createElement('li');
+    listItem.textContent = result;
+    list.appendChild(listItem);
 }
