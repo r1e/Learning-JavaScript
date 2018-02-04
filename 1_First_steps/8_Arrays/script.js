@@ -110,3 +110,44 @@ for (var i = 0; i < products.length; i++) {
 }
 
 totalBox.textContent = 'Total: $' + total.toFixed(2);
+
+
+/* --------------------------------------------------------------------------------
+   # 演習2
+     擬似検索フォーム
+---------------------------------------------------------------------------------- */
+
+var list = document.querySelector('.output2 ul');
+var searchInput = document.querySelector('.output2 input');
+var searchBtn = document.querySelector('.output2 button');
+
+list.innerHTML = '';
+
+var myHistory = [];
+
+searchBtn.onclick = function() {
+
+  if (searchInput.value !== '') {
+
+    // 配列の先頭に入力された値を追加する
+    myHistory.unshift(searchInput.value);
+    list.innerHTML = '';
+
+    for (var i = 0; i < myHistory.length; i++) {
+        itemText = myHistory[i];
+        var listItem = document.createElement('li');
+        listItem.textContent = itemText;
+        list.appendChild(listItem);
+    }
+
+    if (myHistory.length >= 5) {
+
+        // 最後の項目を削除する
+        myHistory.pop();
+
+    }
+
+    searchInput.value = '';
+    searchInput.focus();
+  }
+}
