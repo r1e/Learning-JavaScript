@@ -65,6 +65,7 @@ for (var i = 0; i < greetings.length; i++) {
     }
 }
 
+
 /* --------------------------------------------------------------------------------
     # 演習2
     文字列の大文字・小文字を正規化する
@@ -88,4 +89,37 @@ for(var i = 0; i < cities.length; i++) {
     var listItem = document.createElement('li');
     listItem.textContent = result;
     list.appendChild(listItem);
+}
+
+
+/* --------------------------------------------------------------------------------
+    # 演習3
+    文字列を判別して置き換えて正規化する
+---------------------------------------------------------------------------------- */
+
+var list = document.querySelector('.output3 ul');
+list.innerHTML = '';
+
+var stations = ['MAN675847583748sjt567654;Manchester Piccadilly',
+                'GNF576746573fhdg4737dh4;Greenfield',
+                'LIV5hg65hd737456236dch46dg4;Liverpool Lime Street',
+                'SYB4f65hf75f736463;Stalybridge',
+                'HUD5767ghtyfyr4536dh45dg45dg3;Huddersfield'];
+
+for (var i = 0; i < stations.length; i++) {
+    var input = stations[i];
+
+    // 変数 input の最初から3番目までの文字列を抽出する
+    var code = input.slice(0, 3);
+    // 変数 input の';'の位置を抽出する
+    var semicolon = input.indexOf(';');
+    // 変数 input の`;`以降の文字列を抽出する
+    var stationName = input.slice(semicolon + 1);
+    // 文字列を連結する
+    var stationList = code + ': ' + stationName;
+
+    var result = stationList;
+    var listitem = document.createElement('li');
+    listitem.textContent = result;
+    list.appendChild(listitem);
 }
