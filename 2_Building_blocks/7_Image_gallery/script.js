@@ -5,7 +5,6 @@ var overlay = document.querySelector('.overlay');
 
 /* Looping through images */
 
-// 画像の数だけロープして src を生成する
 for (var i = 1; i <= 5; i ++) {
 
   // img の src を生成する
