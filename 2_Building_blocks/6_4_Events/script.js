@@ -11,7 +11,7 @@ for (var i = 1; i <= 16; i++) {
 // Math.random() で生成した浮動小数点の擬似乱数と変数 number に1を足した数で掛け、Math.floor 引数として与えた数以下の最大の整数にする
 // 255 を最大値にしたいので number に 1 を足している
 function random(number) {
-    return Math.floor(Math.random() * number);
+    return Math.floor(Math.random() * (number + 1));
 }
 
 // rgb をランダムに生成する関数
